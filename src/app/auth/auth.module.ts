@@ -6,6 +6,7 @@ import { SignInComponent } from './sign-in/sign-in.component';
 import { RegisterComponent } from './register/register.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { VerifyEmailComponent } from './verify-email/verify-email.component';
+import { AuthService } from './auth.service';
 
 const routes: Routes = [
   { path: '', redirectTo: '/sign-in', pathMatch: 'full' },
@@ -23,5 +24,6 @@ const routes: Routes = [
     VerifyEmailComponent,
   ],
   imports: [CommonModule, RouterModule.forChild(routes)],
+  providers:[AuthService]
 })
 export class AuthModule {}
