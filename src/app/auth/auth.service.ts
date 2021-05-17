@@ -140,4 +140,18 @@ export class AuthService {
     })
   }
 
+  // Need to add a re-authentication mechanism prior to deleting the user
+  DeleteUserData(){
+    const userRef: AngularFirestoreDocument<any> = this.afs.doc(`users/${this.userData.uid}`);
+    userRef.delete();
+    this.afAuth.currentUser.then(u=>{
+      u.delete();
+    })
+
+    return this.afAuth.signOut().then(() => {
+      localStorage.removeItem('user');
+      this.router.navigate(['auth/sign-in']);      
+    })
+  }
+
 }

@@ -47,6 +47,9 @@
                   <p>Email: <strong>{{user.email}}</strong></p>
                   <p>Email Verified: <strong>{{user.emailVerified}}</strong></p>
                 </div>
+                <button (click)="authService.DeleteUserData()">
+                  Delete my data
+                </button>
               </div>
             </div>
           </div>
