@@ -62,7 +62,7 @@ export class AuthService {
   async SendVerificationMail() {
     return (await this.afAuth.currentUser).sendEmailVerification()
     .then(() => {
-      this.router.navigate(['verify-email-address']);
+      this.router.navigate(['auth/verify-email-address']);
     })
   }
 
@@ -136,7 +136,7 @@ export class AuthService {
   SignOut() {
     return this.afAuth.signOut().then(() => {
       localStorage.removeItem('user');
-      this.router.navigate(['sign-in']);
+      this.router.navigate(['auth/sign-in']);
     })
   }
 
