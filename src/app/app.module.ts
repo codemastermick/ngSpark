@@ -10,7 +10,7 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { firebaseConfig } from "../../firebase.config";
 
 import { AuthModule } from './auth/auth.module';
-import { DashboardComponent } from './dashboard/dashboard.component';
+import { DashboardComponent } from './auth/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
